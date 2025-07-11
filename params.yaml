@@ -1,0 +1,18 @@
+preprocess:
+  input : data/raw/diabetes.csv
+  output : data/processed/data.csv
+
+train : 
+  data : data/processed/data.csv
+  model_path : models/model.pkl
+  random_state : 42
+  n_estimators: 100
+  max_depth: 5
+
+dagshub :
+# dagshub experiment tracking uri : found in experiment onglet
+  MLFLOW_TRACKING_URI : https://dagshub.com/Zeineb-ty/class_pipeline
+  MLFLOW_TRACKING_USERNAME : Zeineb-ty
+# this is the token in your profile (default) and you can also copy it from the dvc onglet in the repository
+  MLFLOW_TRACKING_PASSWORD : fb241dcd22c80e18dacb7b096f1d064f10c83a52
+
